@@ -16,16 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include  # add this
 from rest_framework import routers  # add this
-from blogs import views  # add this
+from articles import urls  # add this
 from rest_framework_jwt.views import obtain_jwt_token
 from django.urls import path, include
 
-router = routers.DefaultRouter()  # add this
-router.register(r'blogs', views.BlogView, 'blogs')  # add this
+
+
+#router = routers.DefaultRouter()  # add this
+#router.register(r'articles', views.ArticleListView, 'articles')  # add this
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),  # add this
+    path('articles/', include("articles.urls")),  # add this
     path('token-auth/', obtain_jwt_token),  # add this
     path('core/', include('core.urls'))
 ]

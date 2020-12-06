@@ -2,7 +2,7 @@ from django.db import models
 
 
 # Create your models here.
-class Blog(models.Model):
+class Article(models.Model):
     title = models.CharField(max_length=120)
     author = models.CharField(max_length=120)
     content = models.TextField()
