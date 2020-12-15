@@ -28,7 +28,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('articles/', include('articles.urls')),  # add this
-    path('token-auth/', obtain_jwt_token),  # add this
+    #path('token-auth/', obtain_jwt_token),  # add this
     path('core/', include('core.urls')),
     path('rest-auth/registration/', include('rest_auth.registration.urls')),
+    path('rest-auth/', include('rest_auth.urls')),
 ]
