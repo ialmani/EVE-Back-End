@@ -14,9 +14,6 @@ from rest_framework.generics import (
 from .models import Video
 from .serializers import VideoSerializer
 
-
-# Create your views here.
-
 class VideoListView(ListAPIView):
     queryset = Video.objects.all()
     serializer_class = VideoSerializer
@@ -45,6 +42,4 @@ class VideoDeleteView(DestroyAPIView):
     queryset = Video.objects.all()
     serializer_class = VideoSerializer
     permission_classes = (permissions.IsAuthenticated,)
-from django.shortcuts import render
 
-# Create your views here.
