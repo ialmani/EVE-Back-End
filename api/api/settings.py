@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'rest_auth.registration',
-    'articles',  # add this
+    'articles',
+    'videos',
     'django.contrib.sites',
 ]
 
