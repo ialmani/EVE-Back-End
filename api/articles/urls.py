@@ -8,4 +8,5 @@ urlpatterns = [
     path('<pk>', ArticleDetailView.as_view()),
 
 
+
 ]
