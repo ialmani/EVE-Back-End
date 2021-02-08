@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'authentication',
     'corsheaders',  # add this
     'rest_framework.authtoken',
     'rest_framework',  # add this
@@ -43,8 +44,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'rest_auth.registration',
-    'articles',  # add this
-    'core.apps.CoreConfig',  # add this
+    'articles',
+    'videos',
     'django.contrib.sites',
 ]
 
@@ -138,8 +139,7 @@ ACCOUNT_EMAIL_REQUIRED = False
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
-        ]
+        'rest_framework_simplejwt.authentication.JWTAuthentication',        ]
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
