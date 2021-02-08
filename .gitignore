@@ -1,1 +1,16 @@
 /api/db.sqlite3
+api/authentication/__pycache__/__init__.cpython-39.pyc
+api/authentication/__pycache__/admin.cpython-39.pyc
+api/authentication/__pycache__/api.cpython-39.pyc
+api/authentication/__pycache__/models.cpython-39.pyc
+api/authentication/__pycache__/serializers.cpython-39.pyc
+api/authentication/__pycache__/urls.cpython-39.pyc
+api/authentication/migrations/__pycache__/__init__.cpython-39.pyc
+api/core/__pycache__/__init__.cpython-39.pyc
+api/core/__pycache__/admin.cpython-39.pyc
+api/core/__pycache__/apps.cpython-39.pyc
+api/core/__pycache__/models.cpython-39.pyc
+api/core/__pycache__/serializers.cpython-39.pyc
+api/core/__pycache__/urls.cpython-39.pyc
+api/core/__pycache__/views.cpython-39.pyc
+api/core/migrations/__pycache__/__init__.cpython-39.pyc
