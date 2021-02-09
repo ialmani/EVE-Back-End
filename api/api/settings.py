@@ -40,10 +40,6 @@ INSTALLED_APPS = [
     'corsheaders',  # add this
     'rest_framework.authtoken',
     'rest_framework',  # add this
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'rest_auth.registration',
     'articles',
     'videos',
     'django.contrib.sites',
@@ -130,7 +126,6 @@ STATIC_URL = '/static/'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
