@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',  # add this
     'articles',
     'videos',
+    'comments',
     'django.contrib.sites',
 ]
 

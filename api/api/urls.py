@@ -9,6 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('articles/', include('articles.urls')),
     path('videos/', include('videos.urls')),
+    path('comments/', include('comments.urls')),
     path('auth/', include('authentication.urls')),
     path('api/token', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
