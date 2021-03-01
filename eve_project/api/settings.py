@@ -142,4 +142,3 @@ CORS_ALLOW_ALL_ORIGINS = True
 JWT_AUTH = {
     'JWT_RESPONSE_PAYLOAD_HANDLER': 'api.utils.my_jwt_response_handler'
 }
-
