@@ -13,11 +13,16 @@ from rest_framework.generics import (
 from .models import ArticlesComment
 from .serializers import ArticlesCommentSerializer
 
+from django.apps import apps
+Article = apps.get_model('articles', 'Article')
+
+
 class ArticlesCommentListView(ListAPIView):
-    queryset = ArticlesComment.objects.all()
     serializer_class = ArticlesCommentSerializer
     permission_classes = (permissions.AllowAny,)
-
+    def get_queryset(self):
+        article_id = self.kwargs['pk']
+        return ArticlesComment.objects.filter(article__id=article_id)
 
 class ArticlesCommentDetailView(RetrieveAPIView):
     queryset = ArticlesComment.objects.all()
