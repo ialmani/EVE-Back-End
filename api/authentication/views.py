@@ -1,3 +1,21 @@
 from django.shortcuts import render
 
 # Create your views here.
+from rest_framework.generics import (
+    ListAPIView,
+    RetrieveAPIView,
+    CreateAPIView,
+    DestroyAPIView,
+    UpdateAPIView
+)
+from django.contrib.auth.models import User
+from .serializers import UserSerializer
+
+
+
+
+class UserDetailView(RetrieveAPIView):
+    serializer_class = UserSerializer
+    def get_queryset(self):
+        user_id = self.kwargs['pk']
+        return User.objects.filter(id=user_id)
