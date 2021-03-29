@@ -8,7 +8,8 @@ from videos.models import Video
 
 
 class Comment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
+    username = models.TextField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 
