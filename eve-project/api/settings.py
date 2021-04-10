@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'videos',
     'comments',
     'users',
+    'zoom',
     'django.contrib.sites',
 ]
 
