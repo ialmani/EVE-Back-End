@@ -10,6 +10,7 @@ urlpatterns = [
     path('articles/', include('articles.urls')),
     path('videos/', include('videos.urls')),
     path('comments/', include('comments.urls')),
+    path('zoom/', include('zoom.urls')),
     # path('auth/', include('authentication.urls')),
     path('api/user/', include('users.urls', namespace='users')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
