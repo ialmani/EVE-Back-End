@@ -10,6 +10,7 @@ from rest_framework.generics import (
 )
 from django.contrib.auth.models import User
 from .serializers import UserSerializer
+from django.conf.global_settings import AUTH_USER_MODEL
 
 
 
@@ -18,4 +19,4 @@ class UserDetailView(RetrieveAPIView):
     serializer_class = UserSerializer
     def get_queryset(self):
         user_id = self.kwargs['pk']
-        return User.objects.filter(id=user_id)
+        return AUTH_USER_MODEL.objects.filter(id=user_id)

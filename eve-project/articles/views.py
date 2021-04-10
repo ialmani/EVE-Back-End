@@ -32,7 +32,7 @@ class ArticleDetailView(RetrieveAPIView):
 class ArticleCreateView(CreateAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.AllowAny,)
 
 
 class ArticleUpdateView(UpdateAPIView):

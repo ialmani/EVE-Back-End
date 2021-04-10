@@ -1,3 +1,6 @@
+from django.conf.global_settings import AUTH_USER_MODEL
+from django.contrib.auth.decorators import login_required
+from rest_framework.generics import RetrieveAPIView
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import status
 from rest_framework.response import Response
@@ -5,6 +8,8 @@ from rest_framework.views import APIView
 from .serializers import CustomUserSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import AllowAny
+from .models import User
+
 
 
 class CustomUserCreate(APIView):
@@ -32,3 +37,10 @@ class BlacklistTokenUpdateView(APIView):
             return Response(status=status.HTTP_205_RESET_CONTENT)
         except Exception as e:
             return Response(status=status.HTTP_400_BAD_REQUEST)
+
+
+class UserDetailView(RetrieveAPIView):
+    serializer_class = CustomUserSerializer
+    def get_queryset(self):
+        user_id = self.kwargs['pk']
+        return User.objects.filter(pk=user_id)
