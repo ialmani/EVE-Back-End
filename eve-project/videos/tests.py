@@ -1,7 +1,9 @@
+# from api.settings import AUTH_USER_MODEL
 from rest_framework import status
 from django.test import TestCase
 from rest_framework.test import RequestsClient, APIClient
 from django.contrib.auth.models import User
+
 
 def create_video():
     user = User(username='tom', password='tom')
@@ -9,7 +11,7 @@ def create_video():
     user = User.objects.get(username='tom')
     client = APIClient()
     client.force_authenticate(user=user)
-    response = client.post('http://127.0.0.1:8000/videos/create', {'title': 'testcase', 'description': 'test', 'video_url': 'https://www.google.com/'})
+    response = client.post('http://127.0.0.1:8000/videos/create', {'title': 'testcase', 'user_id': '1','description': 'test', 'video_url': 'https://www.google.com/'})
     return response
 
 class VideoCreateTestCase(TestCase):

@@ -147,7 +147,7 @@ JWT_AUTH = {
     'JWT_RESPONSE_PAYLOAD_HANDLER': 'user.utils.my_jwt_response_handler'
 }
 
-AUTH_USER_MODEL = 'users.User'
+# AUTH_USER_MODEL = 'users.NewUser'
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(hours=24),

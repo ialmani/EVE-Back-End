@@ -9,7 +9,7 @@ def create_article():
     user = User.objects.get(username='tom')
     client = APIClient()
     client.force_authenticate(user=user)
-    response = client.post('http://127.0.0.1:8000/articles/create', {'title': 'testcase', 'author': 'test', 'content': 'Testing the article creation.'})
+    response = client.post('http://127.0.0.1:8000/articles/create', {'title': 'testcase', 'author': 'test', 'user_id': '1' ,'content': 'Testing the article creation.'})
     return response
 
 class ArticleCreateTestCase(TestCase):
@@ -19,8 +19,8 @@ class ArticleCreateTestCase(TestCase):
 
     def test_create_not_authorized(self):
         client = APIClient()
-        response = client.post('http://127.0.0.1:8000/articles/create', {'title': 'testcase', 'author': 'test', 'content': 'Testing the article creation.'})
-        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        response = client.post('http://127.0.0.1:8000/articles/create', {'title': 'testcase', 'author': 'test', 'user_id': "undefined" ,'content': 'Testing the article creation.'})
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
 class ArticleViewTestCase(TestCase):
     def test_view(self):

@@ -13,7 +13,7 @@ def create_article_comment():
     user = User.objects.get(username='tom')
     client = APIClient()
     client.force_authenticate(user=user)
-    article = client.post('http://127.0.0.1:8000/articles/create', {'title': 'testcase', 'author': 'test', 'content': 'Testing the article creation.'})
+    article = client.post('http://127.0.0.1:8000/articles/create', {'title': 'testcase', 'author': 'test', 'user_id': '1','content': 'Testing the article creation.'})
     article_ID = article.json()['id']
     response = client.post('http://127.0.0.1:8000/articles/'+str(article_ID)+'/comments/create',
                            {'article': str(article_ID), 'user': str(user.id), 'body': 'Testing the article comments.'})
