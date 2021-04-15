@@ -19,4 +19,4 @@ class UserDetailView(RetrieveAPIView):
     serializer_class = UserSerializer
     def get_queryset(self):
         user_id = self.kwargs['pk']
-        return AUTH_USER_MODEL.objects.filter(id=user_id)
+        return User.objects.filter(id=user_id)
